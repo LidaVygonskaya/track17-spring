@@ -14,6 +14,8 @@ public abstract class List {
     /**
      * Добавить элемент в конец списка
      */
+    public int length;
+
     abstract void add(int item);
 
     /**
@@ -35,7 +37,13 @@ public abstract class List {
     /**
      * Кол-во элементов списка
      */
-    abstract int size();
+    public int size() {
+        return length;
+    }
 
-
+    public void checkIndex(int idx) {
+        if ((idx < 0) || (idx > length - 1)) {
+            throw new NoSuchElementException();
+        }
+    }
 }
