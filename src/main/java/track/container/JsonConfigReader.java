@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-
 import org.codehaus.jackson.map.ObjectMapper;
 import track.container.config.Bean;
 import track.container.config.ConfigReader;
