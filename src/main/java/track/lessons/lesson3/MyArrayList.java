@@ -10,11 +10,12 @@ import java.util.NoSuchElementException;
  * - с аргументом - начальный размер массива
  */
 public class MyArrayList extends List {
-    private static final int defaultSize = 10;
+    private static final int DEFAULT_SIZE = 10;
+    private static final int INCREMENT_SIZE = 5;
     private int[] array;
 
     public MyArrayList() {
-        this(defaultSize);
+        this(DEFAULT_SIZE);
     }
 
     public MyArrayList(int capacity) {
@@ -24,7 +25,7 @@ public class MyArrayList extends List {
     @Override
     void add(int item) {
         if (length >= array.length) {
-            int[] newArray = new int[array.length + defaultSize];
+            int[] newArray = new int[array.length + INCREMENT_SIZE];
             System.arraycopy(array,0, newArray, 0, array.length);
             array = newArray;
         }
@@ -37,7 +38,7 @@ public class MyArrayList extends List {
     int remove(int idx) throws NoSuchElementException {
         checkIndex(idx);
         int delElement = array[idx];
-        for (int k = idx; k < length - 1; k++) {
+        for (int i = idx; i < length - 1; i++) {
             array[idx] = array[idx + 1];
             array[length - 1] = 0;
         }
