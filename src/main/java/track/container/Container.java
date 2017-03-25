@@ -26,7 +26,6 @@ public class Container {
         this.beans = beans;
         objByName = new HashMap<>();
         objByClass = new HashMap<>();
-
     }
 
     private Object createObject(Bean bean) throws ReflectiveOperationException {
