@@ -4,14 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import java.lang.reflect.Type;
-import java.lang.reflect.Method;
-
-
 import track.container.config.Bean;
 import track.container.config.ValueType;
 import track.container.config.Property;
 
+import java.lang.reflect.Type;
+import java.lang.reflect.Method;
 
 /**
  * Основной класс контейнера
@@ -30,17 +28,6 @@ public class Container {
         objByClass = new HashMap<>();
 
     }
-
-
-    Map<String, Object> map = new HashMap<>();
-
-    // Реализуйте этот конструктор, используется в тестах!
-    public Container(List<Bean> beans) throws Exception {
-
-    }
-
-    public static void main(String[] args) throws Exception {
-
 
     private Object createObject(Bean bean) throws ReflectiveOperationException {
         Class<?> clazz = Class.forName(bean.getClassName());
@@ -68,6 +55,7 @@ public class Container {
 
         return newObject;
     }
+
 
     private Object toType(String value, Type valueType) {
         if (valueType == Integer.TYPE) {
