@@ -28,7 +28,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
                 <configuration>
-                    <mainClass>track.lessons.lesson1.HelloWorld</mainClass>
+                    <mainClass>track.container.Main</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -74,7 +74,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <!-- Либа для логирования-->
+
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.12</version>
@@ -100,6 +100,5 @@
             <version>2.8.7</version>
         </dependency>
     </dependencies>
-
 
 </project>

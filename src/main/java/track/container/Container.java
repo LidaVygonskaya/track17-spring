@@ -3,8 +3,10 @@ package track.container;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import java.lang.reflect.Type;
 import java.lang.reflect.Method;
+
 
 import track.container.config.Bean;
 import track.container.config.ValueType;
@@ -16,6 +18,7 @@ import track.container.config.Property;
  * У него определено 2 публичных метода, можете дописывать свои методы и конструкторы
  */
 public class Container {
+
     private List<Bean> beans;
     private Map<String, Object> objByName;
     private Map<String, Object> objByClass;
@@ -27,6 +30,17 @@ public class Container {
         objByClass = new HashMap<>();
 
     }
+
+
+    Map<String, Object> map = new HashMap<>();
+
+    // Реализуйте этот конструктор, используется в тестах!
+    public Container(List<Bean> beans) throws Exception {
+
+    }
+
+    public static void main(String[] args) throws Exception {
+
 
     private Object createObject(Bean bean) throws ReflectiveOperationException {
         Class<?> clazz = Class.forName(bean.getClassName());
